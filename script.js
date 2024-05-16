@@ -133,10 +133,15 @@ let weather = {
     condition(data.current.condition.text);
 
     getDaysBtn.forEach((getDay, idx) => {
-      // Toggle active in getDays Button
+      // Toggle active in getDays Button & add animation in weather icon
       getDay.addEventListener("click", function () {
         getDaysBtn.forEach((day) => day.classList.remove("active"));
         this.classList.add("active");
+
+        getWeatherIcon.classList.add("falldown");
+        setTimeout(function () {
+          getWeatherIcon.classList.remove("falldown");
+        }, 2500);
       });
 
       // Display Weather Data by user's click
@@ -160,6 +165,7 @@ let weather = {
           getWeatherDetails[2].innerHTML = Math.round(maxtemp_c) + " °C";
           getWeatherDetails[3].innerHTML = maxwind_mph;
           getWeatherDetails[4].innerHTML = sunrise.replace("AM", "");
+          document.querySelector(".sunset").innerHTML = sunset.replace("PM", "");
 
           showDate.innerHTML = getDate.getDate() + " " + months[getDate.getMonth()] + " " + getDate.getFullYear();
 

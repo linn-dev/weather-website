@@ -27,6 +27,12 @@ body {
   font-size: 1rem;
   font-weight: 500;
   padding: 1.2rem;
+
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   background-color: var(--col-pri-950);
   color: var(--col-tri-200);
   user-select: none;
@@ -151,6 +157,8 @@ main .weather-forecast {
   background: linear-gradient(315deg, #002f2e, #003837);
   box-shadow: -8px -8px 16px #002625,
               8px 8px 16px #004241;
+
+  overflow: hidden;
 }
 
 .weather-icon img {
@@ -264,6 +272,13 @@ main .weather-details {
   color: var(--col-sec-400);
 }
 
+.humidity-gauge,.temp-gauge,.pressure-gauge {
+  animation: fadeslidebot 3s linear infinite;
+}
+
+.wind-gauge {
+  animation: spin 3s linear infinite;
+}
 
 .sun-gauge {
   font-size: 30px;
@@ -276,6 +291,7 @@ main .weather-details {
   right: -2%;
 
   transform: rotate(-90deg);
+  animation: fadeslidepx 3s linear infinite;
 }
 
 footer {
@@ -305,9 +321,70 @@ footer a {
   color: var(--col-fou-50);
 }
 
+/* Animations */
+.falldown {
+  animation: falldown 2s linear;
+}
+
+@keyframes falldown {
+  0% {
+    margin-top: -200px;
+  }
+
+  50% {
+    margin-top: -100px;
+  }
+
+  100% {
+    margin-top: 0;
+  }
+}
+
+@keyframes spin {
+  from {
+    rotate: 0;
+  }
+
+  to {
+    rotate: 1turn;
+  }
+}
+
+@keyframes fadeslidepx {
+  0% {
+    margin-top: -30px;
+  }
+
+  50% {
+    margin-top: 0;
+  }
+
+  100% {
+    margin-top: -30px;
+  }
+
+}
+
+@keyframes fadeslidebot {
+  0% {
+    bottom: 50px;
+  }
+
+  50% {
+    bottom: 10px;
+  }
+
+  100% {
+    bottom: 50px;
+  }
+}
 
 /* Responsive */
 @media screen and (min-width: 1080px) {
+  body {
+    padding: 2rem;
+  }
+  
   form {
     width : 400px;
     margin-left: 200px;
