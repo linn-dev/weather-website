@@ -46,7 +46,6 @@ let weather = {
       alert("Uh oh! This city name does not exist on Earth.");
     }
     const weatherData = await weatherRes.json();
-    console.log(weatherData);
     this.displayWeather(weatherData);
   },
 
