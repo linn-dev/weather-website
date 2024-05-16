@@ -1,120 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Forecast</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Weather Forecast</title>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css"
+    />
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css" />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-solid.css"
+    />
 
-  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-solid.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <body>
+    <header>
+      <nav>
+        <a href="#" class="logo">
+          <img src="./assets/logo.svg" alt="Logo" />
+        </a>
+        <form action="">
+          <input
+            type="search"
+            name="cityName"
+            class="search-city"
+            placeholder="Search City..."
+          />
+          <button type="submit" class="search-btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
 
-<body>
-  <header>
-    <nav>
-      <a href="#" class="logo">
-        <img src="./assets/logo.svg" alt="Logo" />
-      </a>
-      <form action="">
-        <input type="search" name="cityName" class="search-city" placeholder="Search City..." />
-        <button type="submit" class="search-btn">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-      </form>
-      
-      <ul class="days">
-        <li class="today active">Today</li>
-        <li class="tomorrow">Tomorrow</li>
-        <li class="todate">Day</li>
-      </ul>
-    </nav>
-  </header>
+        <ul class="days">
+          <li class="today active">Today</li>
+          <li class="tomorrow">Tomorrow</li>
+          <li class="todate">Day</li>
+        </ul>
+      </nav>
+    </header>
 
-  <main>
-    <section class="weather-forecast">
-      <div class="name-date">
-        <h1 class="city-name animate__animated animate__bounce animate__delay-5s"></h1>
-        <p class="date">Now</p>
-      </div>
-      <div class="weather-icon">
-        <img src="./assets/weather_icons/sunny.png" alt=""  />
-      </div>
-      <div class="temp-condition">
-        <h3 class="temp"></h3>
-        <p class="condition"></p>
-      </div>
-    </section>
-
-    <section class="weather-details">
-      <div class="uv">
-        <h5 class="title">UV</h5>
-        <p class="condition"></p>
-        <div class="uv-gauge">
-          <svg width="320" height="170" viewBox="0 0 320 170" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 160C10.2696 77.1109 77.3232 10 159.999 10C242.675 10 309.729 77.1109 309.998 160"
-              stroke="white" stroke-width="20" stroke-linecap="round" />
-            <div class="indicator"></div>
-          </svg>
-          <p class="condition-text">0</p>
+    <main>
+      <section class="weather-forecast">
+        <div class="name-date">
+          <h1
+            class="city-name animate__animated animate__bounce animate__delay-5s"
+          ></h1>
+          <p class="date">Now</p>
         </div>
-      </div>
-      <div class="humidity">
-        <h5 class="title">Humidity</h5>
-        <p class="condition">0</p>
-        <div class="humidity-gauge gauge">
-          <i class="fa-sharp fa-solid fa-droplet-percent"></i>
+        <div class="weather-icon">
+          <img src="./assets/weather_icons/sunny.png" alt="" />
         </div>
-      </div>
-      <div class="real-feel">
-        <h5 class="title">Real feel</h5>
-        <p class="condition"> <span>&deg C</span></p>
-        <div class="temp-gauge gauge">
-          <i class="fa-solid fa-temperature-list"></i>
+        <div class="temp-condition">
+          <h3 class="temp"></h3>
+          <p class="condition"></p>
         </div>
-      </div>
-      <div class="wind">
-        <h5 class="title">Wind</h5>
-        <p class="condition"></p>
-        <div class="wind-gauge gauge">
-          <i class="fa-solid fa-compass"></i>
-        </div>
-      </div>
-      <div class="light-of-day">
-        <h5 class="title">Sunrise</h5>
-        <p class="condition">00:00</p>
-        <div class="sun-gauge gauge">
-          <i class="fa-sharp fa-solid fa-sunrise"></i>
-          <i class="fa-sharp fa-solid fa-sunset"></i>
-          <p class="sunset">00:00</p>
-        </div>
-        
-      </div>
-      <div class="pressure">
-        <h5 class="title">Pressure</h5>
-        <p class="condition">1000</p>
-        <div class="pressure-gauge gauge">
-          <i class="fa-duotone fa-arrow-down-short-wide"></i>
-        </div>
-      </div>
-    </section>
-  </main>
+      </section>
 
-  <footer>
-    <div class="power-by">
-      <p>Powered By</p>
-      <a href="https://www.weatherapi.com/"  target="_blank"><img src='//cdn.weatherapi.com/v4/images/weatherapi_logo.png' alt="Weather data by WeatherAPI.com"></a>
-    </div>
-    <p>Made with <i class="fa-solid fa-heart"></i> by <a href="#">linn-dev</a></p>
-  </footer>
+      <section class="weather-details">
+        <div class="uv">
+          <h5 class="title">UV</h5>
+          <p class="condition"></p>
+          <div class="uv-gauge">
+            <svg
+              width="320"
+              height="170"
+              viewBox="0 0 320 170"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 160C10.2696 77.1109 77.3232 10 159.999 10C242.675 10 309.729 77.1109 309.998 160"
+                stroke="white"
+                stroke-width="20"
+                stroke-linecap="round"
+              />
+              <div class="indicator"></div>
+            </svg>
+            <p class="condition-text">0</p>
+          </div>
+        </div>
+        <div class="humidity">
+          <h5 class="title">Humidity</h5>
+          <p class="condition">0</p>
+          <div class="humidity-gauge gauge">
+            <i class="fa-sharp fa-solid fa-droplet-percent"></i>
+          </div>
+        </div>
+        <div class="real-feel">
+          <h5 class="title">Real feel</h5>
+          <p class="condition"><span>&deg C</span></p>
+          <div class="temp-gauge gauge">
+            <i class="fa-solid fa-temperature-list"></i>
+          </div>
+        </div>
+        <div class="wind">
+          <h5 class="title">Wind</h5>
+          <p class="condition"></p>
+          <div class="wind-gauge gauge">
+            <i class="fa-solid fa-compass"></i>
+          </div>
+        </div>
+        <div class="light-of-day">
+          <h5 class="title">Sunrise</h5>
+          <p class="condition">00:00</p>
+          <div class="sun-gauge gauge">
+            <i class="fa-sharp fa-solid fa-sunrise"></i>
+            <i class="fa-sharp fa-solid fa-sunset"></i>
+            <p class="sunset">00:00</p>
+          </div>
+        </div>
+        <div class="pressure">
+          <h5 class="title">Pressure</h5>
+          <p class="condition">1000</p>
+          <div class="pressure-gauge gauge">
+            <i class="fa-duotone fa-arrow-down-short-wide"></i>
+          </div>
+        </div>
+      </section>
+    </main>
 
-  <!-- Custom JS -->
-  <script src="script.js"></script>
-</body>
+    <footer>
+      <div class="power-by">
+        <p>Powered By</p>
+        <a href="https://www.weatherapi.com/" target="_blank"
+          ><img
+            src="//cdn.weatherapi.com/v4/images/weatherapi_logo.png"
+            alt="Weather data by WeatherAPI.com"
+        /></a>
+      </div>
+      <p>
+        Made with <i class="fa-solid fa-heart"></i> by <a href="#">linn-dev</a>
+      </p>
+    </footer>
 
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+  </body>
 </html>

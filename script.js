@@ -42,7 +42,7 @@ let weather = {
         "&days=5&aqi=no&alerts=no"
     );
 
-    if(!weatherRes.ok){
+    if (!weatherRes.ok) {
       alert("Uh oh! This city name does not exist on Earth.");
     }
     const weatherData = await weatherRes.json();
@@ -63,48 +63,46 @@ let weather = {
       pressure_mb,
     } = data.current;
 
-    const {
-      sunrise,
-      sunset 
-    } = data.forecast.forecastday[0].astro;
+    const { sunrise, sunset } = data.forecast.forecastday[0].astro;
 
-    getDaysBtn[2].innerHTML = getDate.getDate() + " " + months[getDate.getMonth()];
+    getDaysBtn[2].innerHTML =
+      getDate.getDate() + " " + months[getDate.getMonth()];
 
-    function current () {
+    function current() {
       getCity.innerHTML = name + " , " + country;
       getTemp.innerHTML = Math.round(temp_c) + " °C";
 
-    //Weather Deatils
-    getWeatherDetails[1].innerHTML = humidity;
-    getWeatherDetails[2].innerHTML = Math.round(feelslike_c) + " °C";
-    getWeatherDetails[3].innerHTML = wind_mph;
-    getWeatherDetails[4].innerHTML = sunrise.replace("AM", "");
-    getWeatherDetails[5].innerHTML = pressure_mb;
-    
-    document.querySelector(".real-feel > .title").innerHTML = "Real feel";
-    document.querySelector(".wind > .title").innerHTML = "Wind";
-    //Sunset
-    document.querySelector(".sunset").innerHTML = sunset.replace("PM", "");
+      //Weather Deatils
+      getWeatherDetails[1].innerHTML = humidity;
+      getWeatherDetails[2].innerHTML = Math.round(feelslike_c) + " °C";
+      getWeatherDetails[3].innerHTML = wind_mph;
+      getWeatherDetails[4].innerHTML = sunrise.replace("AM", "");
+      getWeatherDetails[5].innerHTML = pressure_mb;
+
+      document.querySelector(".real-feel > .title").innerHTML = "Real feel";
+      document.querySelector(".wind > .title").innerHTML = "Wind";
+      //Sunset
+      document.querySelector(".sunset").innerHTML = sunset.replace("PM", "");
     }
 
     function condition(text) {
       if (text.match(/sun|clear/i)) {
         getCondition.innerHTML = "Sunny";
-        getWeatherIcon.src= "./assets/weather_icons/sunny.png";
+        getWeatherIcon.src = "./assets/weather_icons/sunny.png";
       } else if (text.match(/cloud|overcast|mist|fog/i)) {
         getCondition.innerHTML = "Cloudy";
-        getWeatherIcon.src= "./assets/weather_icons/cloudy.png";
+        getWeatherIcon.src = "./assets/weather_icons/cloudy.png";
       } else if (text.match(/rain|drizzle/i)) {
         getCondition.innerHTML = "Rainy";
-        getWeatherIcon.src= "./assets/weather_icons/rainy.png";
+        getWeatherIcon.src = "./assets/weather_icons/rainy.png";
       } else if (text.match(/snow|sleet|freez|blizzardi|ice/i)) {
         getCondition.innerHTML = "Snow";
-        getWeatherIcon.src= "./assets/weather_icons/snow.png";
+        getWeatherIcon.src = "./assets/weather_icons/snow.png";
       } else {
         getCondition.innerHTML = "Thunder";
-        getWeatherIcon.src= "./assets/weather_icons/thunder.png";
+        getWeatherIcon.src = "./assets/weather_icons/thunder.png";
       }
-    };
+    }
 
     function uvIndex(uv) {
       document.querySelector(".uv .condition-text").innerHTML = uv;
@@ -125,7 +123,7 @@ let weather = {
         getWeatherDetails[0].innerHTML = "Extreme";
         indicator.style.transform = "translateX(-50%) rotate(90deg)";
       }
-    };
+    }
 
     current();
     uvIndex(uv);
@@ -152,8 +150,9 @@ let weather = {
           condition(data.current.condition.text);
         } else {
           const text = data.forecast.forecastday[idx].day.condition.text;
-          const { avgtemp_c, avghumidity, uv, maxwind_mph, maxtemp_c } = data.forecast.forecastday[idx].day;
-          const { sunrise, sunset} = data.forecast.forecastday[idx].astro;
+          const { avgtemp_c, avghumidity, uv, maxwind_mph, maxtemp_c } =
+            data.forecast.forecastday[idx].day;
+          const { sunrise, sunset } = data.forecast.forecastday[idx].astro;
           const getDate = new Date(data.forecast.forecastday[idx].date);
 
           document.querySelector(".real-feel > .title").innerHTML = "Max temp";
@@ -164,9 +163,17 @@ let weather = {
           getWeatherDetails[2].innerHTML = Math.round(maxtemp_c) + " °C";
           getWeatherDetails[3].innerHTML = maxwind_mph;
           getWeatherDetails[4].innerHTML = sunrise.replace("AM", "");
-          document.querySelector(".sunset").innerHTML = sunset.replace("PM", "");
+          document.querySelector(".sunset").innerHTML = sunset.replace(
+            "PM",
+            ""
+          );
 
-          showDate.innerHTML = getDate.getDate() + " " + months[getDate.getMonth()] + " " + getDate.getFullYear();
+          showDate.innerHTML =
+            getDate.getDate() +
+            " " +
+            months[getDate.getMonth()] +
+            " " +
+            getDate.getFullYear();
 
           uvIndex(uv);
           condition(text);
@@ -177,12 +184,12 @@ let weather = {
 
   search: function () {
     this.getWeather(getSearchInput.value);
-  }
+  },
 };
 
 getSearchInput.addEventListener("mousedown", function () {
   getSearchbtn.children[0].classList.add("fa-fade");
-})
+});
 
 getSearchbtn.addEventListener("click", function (e) {
   e.preventDefault();

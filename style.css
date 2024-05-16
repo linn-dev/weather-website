@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 :root {
   --col-pri-950: #003433;
@@ -7,20 +7,22 @@
   --col-fou-50: #eefffb;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)!important;
-  -webkit-touch-callout: none!important;
-  user-select: none!important;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+  -webkit-touch-callout: none !important;
+  user-select: none !important;
 }
 
 /* Clear x search button from chrome */
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
-input[type="search"]::-webkit-search-results-decoration { display: none; }
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
 
 body {
   font-family: "Poppins", sans-serif;
@@ -49,11 +51,11 @@ nav .logo {
   max-width: 50px;
 }
 
-.logo img{
+.logo img {
   width: 100%;
 }
 
-nav .days{
+nav .days {
   display: none;
 }
 
@@ -73,22 +75,21 @@ nav .days {
 
 .days li {
   margin: 0 10px;
-  padding: 10px 20px; 
+  padding: 10px 20px;
   cursor: pointer;
 }
 
 .days li.active {
   border-radius: 30px;
   background: #003433;
-  box-shadow: inset 19px 19px 37px #002c2b,
-              inset -19px -19px 37px #003c3b;
+  box-shadow: inset 19px 19px 37px #002c2b, inset -19px -19px 37px #003c3b;
 }
 
 nav form {
   position: relative;
 }
 
-form .search-city{
+form .search-city {
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
   font-weight: bold;
@@ -100,16 +101,15 @@ form .search-city{
   outline: none;
   border-radius: 44px;
   background: #003433;
-  box-shadow: -8px -8px 16px #001a1a,
-              8px 8px 16px #004e4d;
+  box-shadow: -8px -8px 16px #001a1a, 8px 8px 16px #004e4d;
 }
 
-form .search-city::placeholder{
+form .search-city::placeholder {
   font-size: 0.9rem;
   font-weight: 400;
 }
 
-form .search-btn{
+form .search-btn {
   font-size: 1.5rem;
   color: var(--col-fou-50);
   position: absolute;
@@ -131,7 +131,7 @@ main {
 
 main .weather-forecast {
   height: 100%;
-  
+
   display: grid;
   justify-items: center;
   align-content: space-around;
@@ -155,8 +155,7 @@ main .weather-forecast {
   padding: 50px;
   border-radius: 50%;
   background: linear-gradient(315deg, #002f2e, #003837);
-  box-shadow: -8px -8px 16px #002625,
-              8px 8px 16px #004241;
+  box-shadow: -8px -8px 16px #002625, 8px 8px 16px #004241;
 
   overflow: hidden;
 }
@@ -185,8 +184,8 @@ main .weather-details {
   max-width: 620px;
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(2,1fr);
-  grid-template-rows: repeat(3,1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   gap: 10px;
 }
 
@@ -229,7 +228,7 @@ main .weather-details {
 }
 
 .uv-gauge svg path {
-  stroke:var(--col-sec-400);
+  stroke: var(--col-sec-400);
 }
 
 .uv-gauge .indicator {
@@ -244,14 +243,13 @@ main .weather-details {
 }
 
 .uv-gauge .indicator::after {
-  content: '';
+  content: "";
   display: block;
   width: 15px;
   height: 15px;
 
   background-color: var(--col-tri-200);
   border-radius: 50%;
-
 }
 
 .uv-gauge .condition-text {
@@ -272,7 +270,9 @@ main .weather-details {
   color: var(--col-sec-400);
 }
 
-.humidity-gauge,.temp-gauge,.pressure-gauge {
+.humidity-gauge,
+.temp-gauge,
+.pressure-gauge {
   animation: fadeslidebot 3s linear infinite;
 }
 
@@ -298,8 +298,8 @@ footer {
   font-size: 0.6rem;
   height: 70px;
   margin: 20px -1.2rem -1.2rem;
-  color:#fff;
-  background-color: rgba(142,255,235,0.1);
+  color: #fff;
+  background-color: rgba(142, 255, 235, 0.1);
 
   display: flex;
   justify-content: space-around;
@@ -362,7 +362,6 @@ footer a {
   100% {
     margin-top: -30px;
   }
-
 }
 
 @keyframes fadeslidebot {
@@ -384,9 +383,9 @@ footer a {
   body {
     padding: 2rem;
   }
-  
+
   form {
-    width : 400px;
+    width: 400px;
     margin-left: 200px;
   }
 
@@ -394,9 +393,9 @@ footer a {
     min-width: 100%;
   }
 
-  nav .days{
+  nav .days {
     font-size: 1rem;
-    width: 30%;    
+    width: 30%;
     position: static;
   }
 
